@@ -1,0 +1,66 @@
+{
+  "$schema": "https://www.raycast.com/schemas/extension.json",
+  "name": "wootility-manager-v02",
+  "title": "Wootility Manager V02",
+  "description": "Control your Wooting keyboard profiles and RGB lighting from Raycast",
+  "icon": "command-icon.png",
+  "author": "your-username",
+  "categories": [
+    "Productivity",
+    "Developer Tools"
+  ],
+  "license": "MIT",
+  "commands": [
+    {
+      "name": "manage-profiles",
+      "title": "Manage Profiles",
+      "description": "View and switch between Wooting keyboard profiles",
+      "mode": "view"
+    },
+    {
+      "name": "quick-switch",
+      "title": "Quick Switch Profile", 
+      "description": "Quickly switch to a specific profile",
+      "mode": "no-view",
+      "arguments": [
+        {
+          "name": "profileNumber",
+          "placeholder": "Profile number (1-4)",
+          "type": "text",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "rgb-control",
+      "title": "RGB Control",
+      "description": "Control RGB lighting effects", 
+      "mode": "view"
+    },
+    {
+      "name": "device-info",
+      "title": "Device Information",
+      "description": "View connected Wooting devices information",
+      "mode": "view"
+    }
+  ],
+  "dependencies": {
+    "@raycast/api": "^1.68.0",
+    "react": "^18.2.0"
+  },
+  "devDependencies": {
+    "@raycast/eslint-config": "^1.0.6",
+    "@types/node": "^18.18.4",
+    "@types/react": "^18.2.27",
+    "eslint": "^8.51.0",
+    "prettier": "^3.0.3",
+    "typescript": "^5.2.2"
+  },
+  "scripts": {
+    "build": "ray build -e dist",
+    "dev": "ray develop",
+    "fix-lint": "ray lint --fix", 
+    "lint": "ray lint",
+    "publish": "npx @raycast/api@latest publish"
+  }
+}
